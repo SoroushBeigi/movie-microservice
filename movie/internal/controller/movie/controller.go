@@ -26,7 +26,7 @@ type Controller struct {
 	metadataGateway metadataGateway
 }
 
-func New(ratingGateway ratingGateway, metadataGateway metadataGateway) *Controller {
+func NewController(ratingGateway ratingGateway, metadataGateway metadataGateway) *Controller {
 	return &Controller{ratingGateway, metadataGateway}
 }
 
