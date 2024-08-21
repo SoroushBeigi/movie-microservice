@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	model "github.com/SoroushBeigi/movie-microservice/metadeta/pkg"
+	"github.com/SoroushBeigi/movie-microservice/metadata/pkg/model"
 	"github.com/SoroushBeigi/movie-microservice/movie/internal/gateway"
 	"net/http"
 )
