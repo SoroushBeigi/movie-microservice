@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"github.com/SoroushBeigi/movie-microservice/rating/internal/controller/rating"
@@ -11,7 +11,7 @@ import (
 func main() {
 	log.Println("Starting the rating service")
 	repo := memory.New()
-	ctrl := rating.New(repo)
+	ctrl := rating.NewController(repo)
 	h := httphandler.New(ctrl)
 	http.Handle("/rating", http.HandlerFunc(h.Handle))
 	if err := http.ListenAndServe(":8082", nil); err != nil {

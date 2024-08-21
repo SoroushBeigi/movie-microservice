@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"github.com/SoroushBeigi/movie-microservice/movie/internal/controller/movie"

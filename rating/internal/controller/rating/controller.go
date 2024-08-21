@@ -18,7 +18,7 @@ type Controller struct {
 	repo ratingRepository
 }
 
-func New(repo ratingRepository) *Controller {
+func NewController(repo ratingRepository) *Controller {
 	return &Controller{repo}
 }
 

@@ -2,8 +2,8 @@ package memory
 
 import (
 	"context"
-	"github.com/SoroushBeigi/movie-microservice/metadeta/internal/repository"
-	model "github.com/SoroushBeigi/movie-microservice/metadeta/pkg"
+	"github.com/SoroushBeigi/movie-microservice/metadata/internal/repository"
+	"github.com/SoroushBeigi/movie-microservice/metadata/pkg/model"
 	"sync"
 )
 

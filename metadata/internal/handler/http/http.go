@@ -3,8 +3,8 @@ package http
 import (
 	"encoding/json"
 	"errors"
-	"github.com/SoroushBeigi/movie-microservice/metadeta/internal/controller/metadata"
-	"github.com/SoroushBeigi/movie-microservice/metadeta/internal/repository"
+	"github.com/SoroushBeigi/movie-microservice/metadata/internal/controller/metadata"
+	"github.com/SoroushBeigi/movie-microservice/metadata/internal/repository"
 	"log"
 	"net/http"
 )

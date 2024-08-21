@@ -3,8 +3,8 @@ package metadata
 import (
 	"context"
 	"errors"
-	"github.com/SoroushBeigi/movie-microservice/metadeta/internal/repository"
-	model "github.com/SoroushBeigi/movie-microservice/metadeta/pkg"
+	"github.com/SoroushBeigi/movie-microservice/metadata/internal/repository"
+	"github.com/SoroushBeigi/movie-microservice/metadata/pkg/model"
 )
 
 var ErrNotFound = errors.New("not found")
@@ -17,7 +17,7 @@ type Controller struct {
 	repo metadataRepository
 }
 
-func New(repo metadataRepository) *Controller {
+func NewController(repo metadataRepository) *Controller {
 	return &Controller{repo}
 }
 
