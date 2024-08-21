@@ -18,7 +18,7 @@ type ratingGateway interface {
 
 type metadataGateway interface {
 	Get(ctx context.Context, id string) (*metadatamodel.
-	Metadata, error)
+		Metadata, error)
 }
 
 type Controller struct {
