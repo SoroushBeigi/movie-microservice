@@ -5,6 +5,6 @@ import (
 )
 
 type MovieDetails struct {
-	Rating   *float64       `json:"rating,omitempty"`
+	Rating   *float32       `json:"rating,omitempty"`
 	Metadata model.Metadata `json:"metadata"`
 }

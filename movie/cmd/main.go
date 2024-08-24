@@ -4,14 +4,17 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/SoroushBeigi/movie-microservice/gen"
 	"github.com/SoroushBeigi/movie-microservice/movie/internal/controller/movie"
 	metadatagateway "github.com/SoroushBeigi/movie-microservice/movie/internal/gateway/metadata/http"
 	ratinggateway "github.com/SoroushBeigi/movie-microservice/movie/internal/gateway/rating/http"
-	httphandler "github.com/SoroushBeigi/movie-microservice/movie/internal/handler/http"
+	grpchandler "github.com/SoroushBeigi/movie-microservice/movie/internal/handler/grpc"
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery"
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery/consul"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"log"
-	"net/http"
+	"net"
 	"time"
 )
 
@@ -43,16 +46,22 @@ func main() {
 			time.Sleep(1 * time.Second)
 		}
 	}()
-	defer registry.Deregister(ctx, instanceID,
-		serviceName)
+	defer registry.Deregister(ctx, instanceID, serviceName)
+
 	metadataGateway := metadatagateway.New(registry)
 	ratingGateway := ratinggateway.New(registry)
 
 	ctrl := movie.NewController(ratingGateway, metadataGateway)
-	h := httphandler.New(ctrl)
-	http.Handle("/movie", http.HandlerFunc(h.GetMovieDetails))
+	h := grpchandler.New(ctrl)
 
-	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil); err != nil {
+	lis, listenErr := net.Listen("tcp", fmt.Sprintf("localhost:%d", port))
+	if listenErr != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
+	srv := grpc.NewServer()
+	reflection.Register(srv)
+	gen.RegisterMovieServiceServer(srv, h)
+	if err := srv.Serve(lis); err != nil {
 		panic(err)
 	}
 }
