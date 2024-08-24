@@ -20,7 +20,7 @@ func New(registry discovery.Registry) *Gateway {
 	return &Gateway{registry}
 }
 
-func (g *Gateway) GetAggregatedRating(ctx context.Context, recordID model.RecordID, recordType model.RecordType) (float64, error) {
+func (g *Gateway) GetAggregatedRating(ctx context.Context, recordID model.RecordID, recordType model.RecordType) (float32, error) {
 	addrs, err := g.registry.ServiceAddresses(ctx,
 		"metadata")
 	if err != nil {
@@ -48,7 +48,7 @@ func (g *Gateway) GetAggregatedRating(ctx context.Context, recordID model.Record
 	} else if resp.StatusCode/100 != 2 {
 		return 0, fmt.Errorf("not a 2xx response: %v", resp)
 	}
-	var v float64
+	var v float32
 	if err := json.NewDecoder(resp.Body).Decode(&v); err != nil {
 		return 0, err
 	}
