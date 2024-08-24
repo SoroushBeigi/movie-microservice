@@ -14,7 +14,7 @@ import (
 	"time"
 )
 
-const serviceName = "metadata"
+const serviceName = "rating"
 
 func main() {
 	var port int
