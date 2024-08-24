@@ -4,13 +4,16 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"github.com/SoroushBeigi/movie-microservice/gen"
 	"github.com/SoroushBeigi/movie-microservice/metadata/internal/controller/metadata"
-	httphandler "github.com/SoroushBeigi/movie-microservice/metadata/internal/handler/http"
+	grpchandler "github.com/SoroushBeigi/movie-microservice/metadata/internal/handler/grpc"
 	"github.com/SoroushBeigi/movie-microservice/metadata/internal/repository/memory"
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery"
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery/consul"
+	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	"log"
-	"net/http"
+	"net"
 	"time"
 )
 
@@ -43,9 +46,15 @@ func main() {
 
 	repo := memory.New()
 	ctrl := metadata.NewController(repo)
-	h := httphandler.New(ctrl)
-	http.Handle("/metadata", http.HandlerFunc(h.GetMetadata))
-	if err := http.ListenAndServe(fmt.Sprintf(":%d", port), nil); err != nil {
+	h := grpchandler.New(ctrl)
+	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%v", port))
+	if err != nil {
+		log.Fatalf("failed to listen: %v", err)
+	}
+	srv := grpc.NewServer()
+	reflection.Register(srv)
+	gen.RegisterMetadataServiceServer(srv, h)
+	if err := srv.Serve(lis); err != nil {
 		panic(err)
 	}
 }
