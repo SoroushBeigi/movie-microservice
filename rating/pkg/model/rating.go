@@ -1,5 +1,20 @@
 package model
 
+type RatingEvent struct {
+	UserID     UserID          `json:"userId"`
+	RecordID   RecordID        `json:"recordId"`
+	RecordType RecordType      `json:"recordType"`
+	Value      RatingValue     `json:"value"`
+	EventType  RatingEventType `json:"eventType"`
+}
+
+type RatingEventType string
+
+const (
+	RatingEventTypePut    = "put"
+	RatingEventTypeDelete = "delete"
+)
+
 type RecordID string
 
 type RecordType string
