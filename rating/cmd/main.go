@@ -9,7 +9,7 @@ import (
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery/consul"
 	"github.com/SoroushBeigi/movie-microservice/rating/internal/controller/rating"
 	grpchandler "github.com/SoroushBeigi/movie-microservice/rating/internal/handler/grpc"
-	"github.com/SoroushBeigi/movie-microservice/rating/internal/repository/memory"
+	"github.com/SoroushBeigi/movie-microservice/rating/internal/repository/mysql"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 	"log"
@@ -32,9 +32,7 @@ func main() {
 	ctx := context.Background()
 	instanceID := discovery.
 		GenerateInstanceID(serviceName)
-	if err := registry.Register(ctx, instanceID,
-		serviceName, fmt.Sprintf("localhost:%d", port)); err !=
-		nil {
+	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%d", port)); err != nil {
 		panic(err)
 	}
 
@@ -49,12 +47,15 @@ func main() {
 
 	defer registry.Deregister(ctx, instanceID, serviceName)
 
-	repo := memory.New()
-	ctrl := rating.NewController(repo)
+	repo, sqlErr := mysql.New()
+	if sqlErr != nil {
+		panic(sqlErr)
+	}
+	ctrl := rating.NewController(repo, nil)
 	h := grpchandler.New(ctrl)
-	lis, err := net.Listen("tcp", fmt.Sprintf("localhost:%v", port))
-	if err != nil {
-		log.Fatalf("failed to listen: %v", err)
+	lis, lisErr := net.Listen("tcp", fmt.Sprintf("localhost:%v", port))
+	if lisErr != nil {
+		log.Fatalf("failed to listen: %v", lisErr)
 	}
 	srv := grpc.NewServer()
 	reflection.Register(srv)

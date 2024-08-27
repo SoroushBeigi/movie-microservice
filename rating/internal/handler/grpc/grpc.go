@@ -29,7 +29,7 @@ func (h *Handler) GetAggregatedRating(ctx context.Context, req *gen.GetAggregate
 	} else if err != nil {
 		return nil, status.Errorf(codes.Internal, err.Error())
 	}
-	return &gen.GetAggregatedRatingResponse{RatingValue: v}, nil
+	return &gen.GetAggregatedRatingResponse{RatingValue: float64(v)}, nil
 }
 
 func (h *Handler) PutRating(ctx context.Context, req *gen.PutRatingRequest) (*gen.PutRatingResponse, error) {

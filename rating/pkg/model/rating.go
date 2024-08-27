@@ -14,14 +14,13 @@ const (
 	RatingEventTypePut    = "put"
 	RatingEventTypeDelete = "delete"
 )
+const (
+	RecordTypeMovie = RecordType("movie")
+)
 
 type RecordID string
 
 type RecordType string
-
-const (
-	RecordTypeMovie = RecordType("movie")
-)
 
 type UserID string
 

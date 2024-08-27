@@ -1,0 +1,251 @@
+[33mcommit 24f4c9e46b12591854ec74a6c8a0ad7f8f268de2[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 16:33:47 2024 +0330
+
+    implemented get and put for mysql repository in metadata service
+
+[33mcommit d8ddbeec747379e0b77117326b5b83ffc17e65f0[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 16:27:50 2024 +0330
+
+    added mysql repository for metadata service
+
+[33mcommit 9bfd37f30c5ea2e69f64670beb92742b2f1733a9[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 16:24:14 2024 +0330
+
+    addd SQL schema
+
+[33mcommit 0a862a8a8ca24bd2993d826fc22ccc64458346e8[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 14:28:05 2024 +0330
+
+    updated rating controller with kafka ingester
+
+[33mcommit 94e1b32f0b1468a9f97a2da9898e23ad2cffb6d2[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 11:50:13 2024 +0330
+
+    implemented rating service kafka ingester
+
+[33mcommit 6700bb74da1c6cbe24e9e32b3bc1343fb86cf18c[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Mon Aug 26 11:21:48 2024 +0330
+
+    created rating ingester application
+
+[33mcommit 47ebe5a49deffb89077d9d786d1c6eb9d10da0fc[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 17:16:16 2024 +0330
+
+    fixed float type bug
+
+[33mcommit e4739747084fdc979e1f1ada05918e3514bf6e12[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 17:03:06 2024 +0330
+
+    updated movie main.go to use grpc
+
+[33mcommit 9bfcecd3686a5b88f44fc2eaf76ec922f8b04f21[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 16:54:46 2024 +0330
+
+    implemented rating and metadata grpc gateways
+
+[33mcommit 28107617c3aed553f360945b75e521b8702bb27e[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 16:20:17 2024 +0330
+
+    added grpc util
+
+[33mcommit e950c0bb1057d66c87164e3dc0d6d90dc812e108[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 16:16:39 2024 +0330
+
+    updated rating main.go to use grpc
+
+[33mcommit 6cc3b63992fe58143c98e6c829f6fb02b82d0f7b[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 16:14:07 2024 +0330
+
+    implemented rating grpc handler
+
+[33mcommit b3695a12a705be548fe7199b08d28afd43cfa885[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 16:03:16 2024 +0330
+
+    updated metadata main.go to use grpc
+
+[33mcommit 140a0392ba0e164ce98af3a724ea6d8ea8a62c4d[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 15:59:17 2024 +0330
+
+    implemented metadata grpc handler
+
+[33mcommit 0ce16c721ac33ba2cf8610df9f2507da72bc7273[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 15:51:17 2024 +0330
+
+    added model mapper for metadata
+
+[33mcommit 11d2b8687ba0d164c7849a1c987887bb3c4de45d[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 15:27:30 2024 +0330
+
+    added gRPC proto services
+
+[33mcommit 934df84039e410c27cbcafe6393b4a3c9b168694[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 13:55:20 2024 +0330
+
+    added benchmark for proto3, XML and JSON
+
+[33mcommit 18a9ceae03208bb9b820b0af5bd99512c0d45f37[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 13:52:03 2024 +0330
+
+    added sizecompare cli tool
+
+[33mcommit 0cb375cd4fce5a268596abce6b2656f036bd7192[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 13:48:03 2024 +0330
+
+    added proto3 generated models
+
+[33mcommit b99d401b10ee8e3fef98acd1aceb3741ecc071c8[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 11:48:34 2024 +0330
+
+    fixed consul service name bug
+
+[33mcommit 3b48b618226b351190c931b6d2d1f96562c1adb3[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Sat Aug 24 11:01:08 2024 +0330
+
+    added consul-based discovery to cmd files
+
+[33mcommit 243e16ce86963c727998df0db2a5c724fe74d000[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 16:17:56 2024 +0330
+
+    implemented consul-based discovery
+
+[33mcommit 3b75b4770824a3d2d1a0a136a05de7c3c380a09e[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 15:07:32 2024 +0330
+
+    implemented memory-based discovery
+
+[33mcommit 1cd6d7fa9056dd6538e175e2935262d7b58cfd5f[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 11:22:19 2024 +0330
+
+    main files problem solved
+
+[33mcommit 3ae1465a5d300fed09adc55d3f73a73252d5e540[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 11:20:33 2024 +0330
+
+    added movie service command file
+
+[33mcommit 13f2826431dca4251c22b0e0e9f550bfd27e800b[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 11:13:34 2024 +0330
+
+    added movie service handler
+
+[33mcommit e0654e3bfae7300cdc698ba0f740790f883352aa[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 10:56:29 2024 +0330
+
+    added movie service controller
+
+[33mcommit c5f3086db2fd655381525ff3ba1de62b6cb02933[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 10:18:39 2024 +0330
+
+    added metadata and rating gateways
+
+[33mcommit 9664c8173f1fe5a4d87ad3cf726276a9fe774d18[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Wed Aug 21 09:33:53 2024 +0330
+
+    added movie service model
+
+[33mcommit 1b3d1b2cdac4e262511b7bf9a2d07a32205a7695[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 17:22:13 2024 +0330
+
+    implemented main.go for rating service
+
+[33mcommit edc90ada6b7cae9498f48ef15f6a7bb5028b1627[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 17:19:25 2024 +0330
+
+    implemented rating GET and PUT handler
+
+[33mcommit 32d41ae07c73dff29aa2293f4099cb57f1fb4150[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 16:59:51 2024 +0330
+
+    implemented rating controller
+
+[33mcommit 2d6e075310f1e09971f56a7aded27aa9c9f733ca[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 13:38:28 2024 +0330
+
+    implemented rating repository and error
+
+[33mcommit 7c5df10051346b96377df6550dfc90b6415b605f[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 13:24:23 2024 +0330
+
+    created rating model
+
+[33mcommit 8e366337e62fc9591a6976035b085c1c4196c3dd[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 12:32:56 2024 +0330
+
+    added main.go for metadata service
+
+[33mcommit 5b644948c549fdb1af98eba4bdac66389acb2245[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 12:31:29 2024 +0330
+
+    added metadata http handler
+
+[33mcommit 389ce8228be1ed05b6a0df104a6226c118893d3a[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 12:28:42 2024 +0330
+
+    added metadata controller
+
+[33mcommit f5986941e5e8e2133185dd21e94f5cebda588d3c[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 12:15:22 2024 +0330
+
+    added memory file
+
+[33mcommit 24fb68981fa37d2c82fa9e75383b028946d4e03c[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 12:01:52 2024 +0330
+
+    added errors file
+
+[33mcommit 7cdc8a9abf793e0889de5915d1a91b872dd99e14[m
+Author: s.masoumbeigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 11:55:05 2024 +0330
+
+    added metadata model
+
+[33mcommit 540d44b34c9e7972bb3c9a60035fc0323dbd2934[m
+Author: Soroush Beigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 11:48:22 2024 +0330
+
+    Update README.md
+
+[33mcommit 6fddef2c16ebf026a0197987c1d0d1c9f562b08a[m
+Author: Soroush Beigi <sbeygi712@gmail.com>
+Date:   Tue Aug 20 11:47:25 2024 +0330
+
+    Initial commit
