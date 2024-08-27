@@ -1,4 +1,7 @@
-FROM ubuntu:latest
+FROM alpine:latest
 LABEL authors="S.Masoumbeigi"
 
-ENTRYPOINT ["top", "-b"]
+COPY main .
+COPY configs/. .
+EXPOSE 8083
+CMD ["/main"]
