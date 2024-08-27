@@ -32,9 +32,9 @@ func main() {
 	port := cfg.API.Port
 	log.Printf("Starting the metadata service on port %d", port)
 
-	registry, err := consul.NewRegistry("localhost:8500")
-	if err != nil {
-		panic(err)
+	registry, consulErr := consul.NewRegistry("localhost:8500")
+	if consulErr != nil {
+		panic(consulErr)
 	}
 	ctx := context.Background()
 	instanceID := discovery.

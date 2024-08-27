@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"flag"
 	"fmt"
 	"github.com/SoroushBeigi/movie-microservice/gen"
 	"github.com/SoroushBeigi/movie-microservice/movie/internal/controller/movie"
@@ -13,19 +12,26 @@ import (
 	"github.com/SoroushBeigi/movie-microservice/pkg/discovery/consul"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
+	"gopkg.in/yaml.v3"
 	"log"
 	"net"
+	"os"
 	"time"
 )
 
 const serviceName = "movie"
 
 func main() {
-	var port int
-	flag.IntVar(&port, "port", 8083, "API handler port")
-	flag.Parse()
-	log.Printf("Starting the movie service on port %d",
-		port)
+	f, err := os.Open("base.yaml")
+	if err != nil {
+		panic(err)
+	}
+	var cfg config
+	if err := yaml.NewDecoder(f).Decode(&cfg); err != nil {
+		panic(err)
+	}
+	port := cfg.API.Port
+	log.Printf("Starting the metadata service on port %d", port)
 	registry, err := consul.NewRegistry("localhost:8500")
 	if err != nil {
 		panic(err)
