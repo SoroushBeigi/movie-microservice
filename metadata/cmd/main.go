@@ -36,11 +36,6 @@ func main() {
 	if consulErr != nil {
 		panic(consulErr)
 	}
-
-	//registry, err := consul.NewRegistry("localhost:8500")
-	//if err != nil {
-	//	panic(err)
-	//}
 	ctx := context.Background()
 	instanceID := discovery.GenerateInstanceID(serviceName)
 	if err := registry.Register(ctx, instanceID, serviceName, fmt.Sprintf("localhost:%d", port)); err != nil {
