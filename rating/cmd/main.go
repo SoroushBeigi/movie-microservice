@@ -30,7 +30,7 @@ func main() {
 		panic(err)
 	}
 	port := cfg.API.Port
-	log.Printf("Starting the metadata service on port %d", port)
+	log.Printf("Starting the rating service on port %d", port)
 
 	registry, consulErr := consul.NewRegistry("localhost:8500")
 	if consulErr != nil {
