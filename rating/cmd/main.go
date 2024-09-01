@@ -32,9 +32,9 @@ func main() {
 	port := cfg.API.Port
 	log.Printf("Starting the rating service on port %d", port)
 
-	registry, consulErr := consul.NewRegistry("localhost:8500")
-	if consulErr != nil {
-		panic(consulErr)
+	registry, err := consul.NewRegistry("host.docker.internal:8500")
+	if err != nil {
+		panic(err)
 	}
 	ctx := context.Background()
 	instanceID := discovery.
